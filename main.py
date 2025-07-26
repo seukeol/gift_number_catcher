@@ -1,11 +1,9 @@
-from http.client import responses
 
-from aiohttp import ClientSession
 import requests
 import pyautogui
 import tkinter as tk
 from threading import Thread
-import time
+
 
 
 class FunctionRunner:
@@ -18,7 +16,7 @@ class FunctionRunner:
                 url = f'https://t.me/nft/{gift_name}-{gift_number - 1}'
                 response = requests.get(url)
                 if f'{response}' != f'https://t.me/nft/{gift_name}-{gift_number - 1}':
-                    print(1)
+                    continue
                 else:
                     print('gg')
                     pyautogui.click()
